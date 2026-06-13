@@ -15,7 +15,7 @@ export default function Home() {
       {/* NAV */}
       <nav>
         <div class="nav-inner">
-          <a href="#" className="nav-logo">Next9<span>Accounting</span></a>
+          <a href="#" className="nav-logo-img"><img src="/logo.jpg" alt="Next9Accounting" style={{height:"40px",width:"40px",borderRadius:"50%",objectFit:"cover"}} /></a>
           <ul className="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
