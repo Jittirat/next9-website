@@ -287,6 +287,17 @@ export default function Home() {
                     <div className="contact-item-value">English · ภาษาไทย</div>
                   </div>
                 </div>
+                <div className="contact-item">
+                  <div className="contact-icon">📘</div>
+                  <div>
+                    <div className="contact-item-label">Facebook</div>
+                    <div className="contact-item-value">
+                      <a href="https://www.facebook.com/Next9Accounting" target="_blank" rel="noopener noreferrer" style={{color:'var(--ink)'}}>
+                        Next9Accounting
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="contact-form">

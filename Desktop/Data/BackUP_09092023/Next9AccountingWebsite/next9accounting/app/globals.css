@@ -610,6 +610,7 @@ h2 {
   color: var(--ink);
   line-height: 1.5;
 }
+.contact-item-value a:hover { color: var(--orange-dark); }
 .contact-form {
   background: var(--white);
   border-radius: var(--radius-lg);
