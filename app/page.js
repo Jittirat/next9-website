@@ -15,7 +15,10 @@ export default function Home() {
       {/* NAV */}
       <nav>
         <div class="nav-inner">
-          <a href="#" className="nav-logo-img"><img src="/logo.jpg" alt="Next9Accounting" style={{height:"40px",width:"40px",borderRadius:"50%",objectFit:"cover"}} /></a>
+          <a href="#" className="nav-logo">
+            <span className="nav-logo-mark">N9</span>
+            Next9<span>Accounting</span>
+          </a>
           <ul className="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
@@ -257,7 +260,7 @@ export default function Home() {
         <div className="container">
           <div className="contact-grid">
             <div>
-              <div className="section-eyebrow" style={{color:'var(--gold)'}}>Get in touch</div>
+              <div className="section-eyebrow">Get in touch</div>
               <h2>Let's talk about your business</h2>
               <p className="section-sub">
                 Whether you need bookkeeping, VAT support, or a full financial reporting package — we're here to help. Reach out and we'll respond within one business day.
@@ -290,8 +293,8 @@ export default function Home() {
               {submitted ? (
                 <div style={{textAlign:'center', padding:'40px 0'}}>
                   <div style={{fontSize:'40px', marginBottom:'16px'}}>✅</div>
-                  <h3 style={{fontFamily:'var(--font-display)', fontSize:'22px', color:'var(--white)', marginBottom:'10px'}}>Message received</h3>
-                  <p style={{color:'rgba(255,255,255,0.55)', fontSize:'14px'}}>We'll be in touch within one business day.</p>
+                  <h3 style={{fontFamily:'var(--font-display)', fontSize:'22px', color:'var(--ink)', marginBottom:'10px'}}>Message received</h3>
+                  <p style={{color:'var(--gray-500)', fontSize:'14px'}}>We'll be in touch within one business day.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
@@ -342,7 +345,10 @@ export default function Home() {
         <div className="container">
           <div className="footer-grid">
             <div>
-              <div className="footer-brand-name">Next9<span>Accounting</span></div>
+              <div className="footer-brand-name">
+              <span className="nav-logo-mark" style={{width:'34px',height:'34px',fontSize:'14px'}}>N9</span>
+              Next9<span>Accounting</span>
+            </div>
               <div className="footer-tagline">"Accounting is the language of business; every number tells a story."</div>
             </div>
             <div>
