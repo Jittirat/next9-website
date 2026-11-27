@@ -1,27 +1,49 @@
 'use client';
-import { useForm, ValidationError } from '@formspree/react';
+import { useState } from 'react';
 
 function ContactForm() {
-  const [state, handleSubmit] = useForm('meagdydy');
-  if (state.succeeded) {
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('sending');
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://formspree.io/f/meagdydy', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  }
+
+  if (status === 'success') {
     return (
       <div className="form-success">
         <div className="form-success-icon">✅</div>
         <h3>Message Sent!</h3>
-        <p>Thank you for reaching out. We'll get back to you shortly.</p>
+        <p>Thank you for reaching out. We&apos;ll get back to you shortly.</p>
       </div>
     );
   }
+
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       <div className="form-row">
         <div className="form-field">
           <input type="text" name="name" placeholder="Your Name" className="form-input" required />
-          <ValidationError field="name" errors={state.errors} className="form-error" />
         </div>
         <div className="form-field">
           <input type="email" name="email" placeholder="Email Address" className="form-input" required />
-          <ValidationError field="email" errors={state.errors} className="form-error" />
         </div>
       </div>
       <div className="form-field">
@@ -29,10 +51,12 @@ function ContactForm() {
       </div>
       <div className="form-field">
         <textarea name="message" placeholder="Tell us about your business needs..." className="form-input form-textarea" rows={4} required />
-        <ValidationError field="message" errors={state.errors} className="form-error" />
       </div>
-      <button type="submit" disabled={state.submitting} className="btn-primary" style={{width:'100%',justifyContent:'center'}}>
-        {state.submitting ? 'Sending...' : 'Send Message'}
+      {status === 'error' && (
+        <p className="form-error">Something went wrong. Please try again.</p>
+      )}
+      <button type="submit" disabled={status === 'sending'} className="btn-primary" style={{width:'100%',justifyContent:'center'}}>
+        {status === 'sending' ? 'Sending...' : 'Send Message'}
       </button>
     </form>
   );
