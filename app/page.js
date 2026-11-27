@@ -6,8 +6,7 @@ export default function Home() {
       <nav className="nav">
         <div className="nav-inner">
           <a href="#" className="nav-brand">
-            <span className="nav-logo-mark">N9</span>
-            Next9<span>Accounting</span>
+            <img src="/logo.jpg" alt="Next9Accounting Logo" className="nav-logo-img" />
           </a>
           <ul className="nav-links">
             <li><a href="#services">Services</a></li>
