@@ -1,4 +1,43 @@
 'use client';
+import { useForm, ValidationError } from '@formspree/react';
+
+function ContactForm() {
+  const [state, handleSubmit] = useForm('meagdydy');
+  if (state.succeeded) {
+    return (
+      <div className="form-success">
+        <div className="form-success-icon">✅</div>
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out. We'll get back to you shortly.</p>
+      </div>
+    );
+  }
+  return (
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <div className="form-row">
+        <div className="form-field">
+          <input type="text" name="name" placeholder="Your Name" className="form-input" required />
+          <ValidationError field="name" errors={state.errors} className="form-error" />
+        </div>
+        <div className="form-field">
+          <input type="email" name="email" placeholder="Email Address" className="form-input" required />
+          <ValidationError field="email" errors={state.errors} className="form-error" />
+        </div>
+      </div>
+      <div className="form-field">
+        <input type="text" name="subject" placeholder="Subject" className="form-input" required />
+      </div>
+      <div className="form-field">
+        <textarea name="message" placeholder="Tell us about your business needs..." className="form-input form-textarea" rows={4} required />
+        <ValidationError field="message" errors={state.errors} className="form-error" />
+      </div>
+      <button type="submit" disabled={state.submitting} className="btn-primary" style={{width:'100%',justifyContent:'center'}}>
+        {state.submitting ? 'Sending...' : 'Send Message'}
+      </button>
+    </form>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -120,15 +159,7 @@ export default function Home() {
             </div>
             <div className="contact-form-card">
               <h3>Send a Message</h3>
-              <form className="contact-form" onSubmit={e => e.preventDefault()}>
-                <div className="form-row">
-                  <input type="text" placeholder="Your Name" className="form-input" />
-                  <input type="email" placeholder="Email Address" className="form-input" />
-                </div>
-                <input type="text" placeholder="Subject" className="form-input" />
-                <textarea placeholder="Tell us about your business needs..." className="form-input form-textarea" rows={4} />
-                <button type="submit" className="btn-primary" style={{width:'100%',justifyContent:'center'}}>Send Message</button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
