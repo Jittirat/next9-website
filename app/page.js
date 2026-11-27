@@ -24,30 +24,11 @@ export default function Home() {
         <div className="hero-blob hero-blob-2" />
         <div className="container hero-inner">
           <div className="hero-text">
-            <div className="hero-badge">🏆 Trusted by 200+ clients</div>
             <h1>Your Numbers,<br /><span className="hero-accent">Our Expertise</span></h1>
             <p className="hero-sub">Professional accounting and tax services that keep your business compliant, efficient, and financially healthy — so you can focus on growth.</p>
             <div className="hero-actions">
               <a href="#contact" className="btn-primary">Book Free Consultation</a>
               <a href="#services" className="btn-ghost">Our Services →</a>
-            </div>
-          </div>
-          <div className="hero-stats">
-            <div className="stat-box stat-orange">
-              <div className="stat-num">10+</div>
-              <div className="stat-label">Years Experience</div>
-            </div>
-            <div className="stat-box stat-green">
-              <div className="stat-num">200+</div>
-              <div className="stat-label">Happy Clients</div>
-            </div>
-            <div className="stat-box stat-yellow">
-              <div className="stat-num">100%</div>
-              <div className="stat-label">Compliance Rate</div>
-            </div>
-            <div className="stat-box stat-cream">
-              <div className="stat-num">5★</div>
-              <div className="stat-label">Client Rating</div>
             </div>
           </div>
         </div>
