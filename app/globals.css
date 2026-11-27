@@ -189,8 +189,9 @@ img { max-width: 100%; }
 /* ── ABOUT ── */
 .about { padding: 90px 0; background: var(--cream); }
 .about-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid; grid-template-columns: 1fr;
   gap: 56px; align-items: start;
+  max-width: 700px;
 }
 .about-content h2 {
   font-family: var(--font-display); font-size: clamp(1.5rem, 2.5vw, 2.1rem);

@@ -98,26 +98,6 @@ export default function Home() {
               <li>✅ Transparent pricing, no hidden fees</li>
             </ul>
           </div>
-          <div className="about-panel">
-            <div className="about-stats">
-              <div>
-                <div className="about-stat-num">10+</div>
-                <div className="about-stat-label">Years experience</div>
-              </div>
-              <div>
-                <div className="about-stat-num">200+</div>
-                <div className="about-stat-label">Happy clients</div>
-              </div>
-              <div>
-                <div className="about-stat-num">100%</div>
-                <div className="about-stat-label">Compliance rate</div>
-              </div>
-              <div>
-                <div className="about-stat-num">5★</div>
-                <div className="about-stat-label">Client rating</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
